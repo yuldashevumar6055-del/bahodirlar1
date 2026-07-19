@@ -1,0 +1,2458 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+<meta charset="UTF-8">
+
+
+<title>BAHODIRLAR FITNESS</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+    font-family:'Montserrat',sans-serif;
+}
+
+html,body{
+    overflow-x:hidden;
+}
+
+body{
+    background:#000;
+    color:white;
+}
+
+section{
+    width:100%;
+    position:relative;
+}
+
+a{
+    text-decoration:none;
+    color:white;
+}
+
+ul{
+    list-style:none;
+}
+
+img{
+    display:block;
+    max-width:100%;
+}
+
+button{
+    cursor:pointer;
+    font-family:inherit;
+}
+
+:root{
+    --gold:#d6a11b;
+    --gold2:#f5c64c;
+    --dark:#050505;
+    --gray:#bfbfbf;
+}
+
+
+/* HERO */
+
+.hero{
+
+    height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+
+    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.75)),
+
+    url(images/gym.jpg) center/cover;
+
+}
+
+.hero-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    radial-gradient(circle at top,rgba(214,161,27,.25),transparent 60%);
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    max-width:900px;
+
+    text-align:center;
+
+    z-index:2;
+    padding:120px 20px 40px;
+
+}
+
+.hero-tag{
+
+    display:inline-block;
+
+    color:var(--gold);
+
+    border:1px solid rgba(214,161,27,.5);
+
+    padding:10px 25px;
+
+    border-radius:40px;
+
+    font-size:13px;
+
+    letter-spacing:2px;
+
+    margin-bottom:35px;
+
+}
+
+.hero h1{
+
+    font-size:85px;
+
+    line-height:1.05;
+
+    font-weight:900;
+
+}
+
+.hero h1 span{
+
+    color:var(--gold);
+
+}
+
+.hero-text{
+
+    margin:35px auto;
+
+    max-width:700px;
+
+    color:#d7d7d7;
+
+    font-size:22px;
+
+    line-height:1.8;
+
+}
+
+.hero-info{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+    margin:45px auto;
+
+    max-width:700px;
+
+}
+
+.hero-info div{
+
+    padding:18px;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,.06);
+
+    backdrop-filter:blur(8px);
+border:1px solid rgba(255,255,255,.08);
+
+background:
+
+linear-gradient(
+
+180deg,
+
+rgba(255,255,255,.08),
+
+rgba(255,255,255,.03)
+
+);
+
+    transition:.3s;
+
+}
+
+.hero-info div:hover{
+
+    transform:translateY(-5px);
+
+    border-color:var(--gold);
+
+}
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    gap:20px;
+    margin-top:40px;
+}
+
+.second-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    min-width:180px;
+    height:58px;
+
+    padding:0 35px;
+
+    border:2px solid #fff;
+    border-radius:50px;
+
+    color:#fff;
+    text-decoration:none;
+
+    font-size:18px;
+    font-weight:600;
+
+    transition:.3s;
+
+    margin-top:50px; /* ← добавь */
+}
+
+.second-btn:hover{
+    background:#fff;
+    color:#000;
+   
+}
+
+
+/* HEADER */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+
+    width:100%;
+    height:90px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 clamp(15px,5vw,70px);
+
+    background:rgba(0,0,0,.35);
+    backdrop-filter:blur(8px);
+
+    z-index:1000;
+    transition:.4s;
+}
+
+header.scrolled{
+    background:rgba(0,0,0,.93);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(214,161,27,.2);
+    box-shadow:0 10px 40px rgba(0,0,0,.6);
+}
+
+.logo img{
+    width:90px;
+}
+
+
+nav{
+    display:flex;
+    align-items:center;
+    gap:45px;
+}
+
+nav a{
+    font-size:17px;
+    font-weight:600;
+    letter-spacing:.5px;
+
+    position:relative;
+    transition:.3s;
+}
+
+nav a::after{
+    content:"";
+    position:absolute;
+
+    left:0;
+    bottom:-8px;
+
+    width:0%;
+    height:2px;
+
+    background:var(--gold);
+    transition:.35s;
+}
+
+nav a{
+    padding:10px 0;
+}
+
+nav a:hover{
+    color:white;
+}
+
+nav a::after{
+    background:linear-gradient(90deg,var(--gold),#ffd977);
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+
+
+
+.main-btn{
+    margin-top:50px;
+
+    display:inline-block;
+
+    padding:18px 60px;
+
+    border:2px solid var(--gold);
+    background:var(--gold);
+
+    color:black;
+
+    font-size:20px;
+    font-weight:700;
+
+    border-radius:50px;
+
+    transition:.35s;
+}
+
+.main-btn:hover{
+    background:transparent;
+    color:white;
+    transform:translateY(-4px);
+}
+
+
+.scroll{
+    position:absolute;
+
+    bottom:30px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    font-size:40px;
+
+    animation:down 2s infinite;
+
+    color:var(--gold);
+}
+
+
+@keyframes down{
+
+0%,100%{
+    transform:translate(-50%,0);
+}
+
+50%{
+    transform:translate(-50%,15px);
+}
+
+}
+
+
+/* GENERAL */
+
+.container{
+    width:min(1300px,90%);
+    margin:auto;
+}
+
+
+.title{
+    text-align:center;
+
+    font-size:clamp(32px,5vw,55px);
+
+    font-weight:800;
+
+    margin-bottom:60px;
+
+    color:var(--gold);
+
+    text-transform:uppercase;
+}
+
+
+.about,
+.trainers,
+.programs,
+.prices,
+.contacts{
+
+    padding:120px 0;
+
+    background:#0b0b0b;
+
+}
+
+
+/* ABOUT */
+
+.about-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:70px;
+
+    align-items:center;
+
+}
+
+
+.about-image{
+
+    height:500px;
+
+    background:#1d1d1d;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+
+.about-image img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+
+.about-text{
+
+    font-size:18px;
+
+    line-height:2;
+
+    color:#d9d9d9;
+
+}
+
+
+/* CARDS */
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+    gap:35px;
+
+}
+
+
+.card{
+
+    background:#131313;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    transition:.35s;
+border:1px solid rgba(255,255,255,.08);
+
+background:
+
+linear-gradient(
+
+180deg,
+
+rgba(255,255,255,.08),
+
+rgba(255,255,255,.03)
+
+);
+
+}
+
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:var(--gold);
+
+    box-shadow:0 20px 50px rgba(214,161,27,.18);
+
+}
+
+
+.card-image{
+
+    width:100%;
+
+    height:420px;
+
+    overflow:hidden;
+
+    background:#222;
+
+}
+
+
+.card-image img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:contain;
+
+}
+
+
+.card h3,
+.card p{
+
+    padding:0 30px;
+
+}
+
+
+.card h3{
+
+    margin:25px 0 20px;
+
+    font-size:28px;
+
+    color:var(--gold);
+
+}
+
+
+.card p{
+
+    padding-bottom:30px;
+
+    color:#d5d5d5;
+
+    line-height:1.9;
+
+}
+
+
+/* PRICES */
+
+.price-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:35px;
+
+}
+
+
+.price{
+
+    background:#141414;
+
+    padding:45px;
+
+    text-align:center;
+
+    border-radius:20px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+background:
+
+linear-gradient(
+
+180deg,
+
+rgba(255,255,255,.08),
+
+rgba(255,255,255,.03)
+
+);
+
+    transition:.35s;
+
+}
+
+
+.price:hover{
+
+    transform:scale(1.04);
+
+    border-color:var(--gold);
+
+}
+
+
+.price-number{
+
+    font-size:55px;
+
+    font-weight:800;
+
+    color:var(--gold);
+
+    margin:30px 0;
+
+}
+
+
+/* CONTACT */
+
+.contact-box{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:60px;
+
+}
+
+
+.form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+
+}
+
+
+.form input,
+.form textarea{
+
+    background:#171717;
+
+    border:none;
+
+    color:white;
+
+    border-radius:10px;
+
+    outline:none;
+
+}
+
+
+.form input{
+
+    height:60px;
+
+    padding:0 20px;
+
+}
+
+
+.form textarea{
+
+    height:220px;
+
+    padding:20px;
+
+    resize:none;
+
+}
+
+
+.form button{
+
+    height:60px;
+
+    background:var(--gold);
+
+    border:none;
+
+    font-size:20px;
+
+    font-weight:700;
+
+    border-radius:10px;
+
+}
+
+
+.map{
+
+    background:#1c1c1c;
+
+    border-radius:20px;
+
+    min-height:500px;
+
+}
+
+
+footer{
+
+    padding:35px;
+
+    text-align:center;
+
+    background:black;
+
+    color:#999;
+
+}
+
+
+/* MOBILE MENU */
+
+.menu-btn{
+
+    display:none;
+
+    font-size:34px;
+
+    cursor:pointer;
+
+}
+
+
+@media(max-width:992px){
+
+    nav{
+
+        gap:20px;
+
+    }
+
+
+
+    .about-grid{
+
+        grid-template-columns:1fr;
+
+        gap:40px;
+
+    }
+
+
+    .cards{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+
+    .price-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .contact-box{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+
+
+@media(max-width:768px){
+
+    header{
+
+        height:80px;
+
+        padding:0 20px;
+
+    }
+
+
+    .logo img{
+
+        width:65px;
+
+    }
+
+
+    nav{
+
+        position:fixed;
+
+        top:80px;
+
+        right:-100%;
+
+        width:260px;
+
+        height:calc(100vh - 80px);
+
+        background:#111;
+
+        display:flex;
+
+        flex-direction:column;
+
+        align-items:center;
+
+        padding-top:40px;
+
+        gap:30px;
+
+        transition:.4s;
+
+    }
+
+
+    nav.active{
+
+        right:0;
+
+    }
+
+
+    .menu-btn{
+
+        display:block;
+
+    }
+
+
+   
+
+    .hero-content p{
+
+        font-size:18px;
+
+        letter-spacing:2px;
+
+    }
+
+
+    .cards{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .title{
+
+        font-size:38px;
+
+    }
+
+}
+
+
+
+@media(max-width:480px){
+
+    header{
+
+        height:70px;
+
+    }
+
+
+    .hero-content h1{
+
+        font-size:38px;
+
+    }
+
+}
+.price button{
+
+    padding:15px 45px;
+
+    border:none;
+
+    background:var(--gold);
+
+    color:black;
+
+    border-radius:50px;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+
+.price button:hover{
+
+    transform:translateY(-4px);
+
+    background:var(--gold2);
+
+}
+.price ul{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+    margin-bottom:35px;
+
+}
+.logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.logo img{
+    width:75px;
+}
+
+.logo-text h2{
+    color:var(--gold);
+    font-size:25px;
+    font-weight:900;
+    line-height:1;
+}
+
+.logo-text p{
+    color:#d7d7d7;
+    font-size:12px;
+    letter-spacing:4px;
+    margin-top:3px;
+}
+.hero-subtitle{
+    margin-top:25px;
+    font-size:24px;
+    color:#ddd;
+    letter-spacing:1px;
+}
+
+.hero-features{
+    margin-top:35px;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:18px;
+}
+
+.hero-features span{
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(214,161,27,.3);
+    padding:12px 22px;
+    border-radius:50px;
+    font-size:16px;
+    transition:.3s;
+}
+
+.hero-features span:hover{
+    background:var(--gold);
+    color:black;
+    transform:translateY(-3px);
+}
+.stats{
+    background:#050505;
+    padding:70px 0;
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+}
+
+.stat{
+    text-align:center;
+    background:#111;
+    border:1px solid rgba(255,255,255,.08);
+
+background:
+
+linear-gradient(
+
+180deg,
+
+rgba(255,255,255,.08),
+
+rgba(255,255,255,.03)
+
+);
+    padding:40px;
+    border-radius:20px;
+    transition:.35s;
+}
+
+.stat:hover{
+    transform:translateY(-8px);
+    border-color:var(--gold);
+}
+
+.stat h2{
+    font-size:52px;
+    color:var(--gold);
+}
+
+.stat p{
+    margin-top:10px;
+    color:#bbb;
+    font-size:18px;
+}
+
+@media(max-width:900px){
+.stats-grid{
+grid-template-columns:repeat(2,1fr);
+}
+}
+
+@media(max-width:600px){
+.stats-grid{
+grid-template-columns:1fr;
+}
+}
+.about{
+
+padding:120px 0;
+
+background:#0b0b0b;
+
+}
+
+.about-grid{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:80px;
+
+align-items:center;
+
+}
+
+.about-image img{
+
+width:100%;
+
+border-radius:30px;
+
+box-shadow:0 30px 60px rgba(0,0,0,.4);
+
+}
+
+.section-mini{
+
+display:inline-block;
+
+padding:8px 18px;
+
+border:1px solid var(--gold);
+
+border-radius:40px;
+
+color:var(--gold);
+
+letter-spacing:2px;
+
+font-size:13px;
+
+margin-bottom:20px;
+
+}
+
+.about-content h2{
+
+font-size:48px;
+
+margin-bottom:25px;
+
+}
+
+.about-content>p{
+
+font-size:19px;
+
+line-height:1.8;
+
+color:#cfcfcf;
+
+margin-bottom:40px;
+
+}
+
+.about-features{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:20px;
+
+}
+
+.feature{
+
+display:flex;
+
+gap:20px;
+
+padding:22px;
+
+background:#111;
+
+border-radius:18px;
+border:1px solid rgba(255,255,255,.08);
+
+background:
+
+linear-gradient(
+
+180deg,
+
+rgba(255,255,255,.08),
+
+rgba(255,255,255,.03)
+
+);
+
+transition:.3s;
+
+}
+
+.feature:hover{
+
+transform:translateY(-8px);
+
+border-color:var(--gold);
+
+}
+
+.icon{
+
+width:60px;
+
+height:60px;
+
+background:var(--gold);
+
+border-radius:50%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:28px;
+
+}
+
+.feature h4{
+
+margin-bottom:8px;
+
+}
+
+.feature p{
+
+color:#aaa;
+
+}
+.trainers{
+
+padding:120px 0;
+
+background:#050505;
+
+}
+
+.trainer-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+gap:35px;
+
+margin-top:70px;
+
+}
+
+.trainer-card{
+
+background:#111;
+
+overflow:hidden;
+
+border-radius:25px;
+
+transition:.35s;
+border:1px solid rgba(255,255,255,.08);
+
+background:
+
+linear-gradient(
+
+180deg,
+
+rgba(255,255,255,.08),
+
+rgba(255,255,255,.03)
+
+);
+
+}
+
+.trainer-card:hover{
+
+transform:translateY(-12px);
+
+border-color:var(--gold);
+
+box-shadow:0 25px 60px rgba(0,0,0,.45);
+
+}
+
+.trainer-card img{
+
+width:100%;
+
+height:430px;
+
+object-fit:cover;
+
+transition:.5s;
+
+}
+
+.trainer-card:hover img{
+
+transform:scale(1.08);
+
+}
+
+.trainer-info{
+
+padding:30px;
+
+}
+
+.trainer-info h3{
+
+font-size:28px;
+
+margin-bottom:8px;
+
+}
+
+.trainer-info span{
+
+display:inline-block;
+
+color:var(--gold);
+
+margin-bottom:18px;
+
+font-weight:700;
+
+}
+
+.trainer-info p{
+
+color:#c8c8c8;
+
+line-height:1.8;
+
+margin-bottom:25px;
+
+}
+
+.trainer-btn{
+
+display:inline-block;
+
+padding:14px 28px;
+
+border-radius:40px;
+
+background:var(--gold);
+
+color:black;
+
+font-weight:700;
+
+transition:.3s;
+
+}
+
+.trainer-btn:hover{
+
+transform:translateY(-3px);
+
+box-shadow:0 12px 25px rgba(214,161,27,.35);
+
+}
+
+.advantages{
+
+padding:120px 0;
+
+background:#0b0b0b;
+
+}
+
+.adv-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+gap:30px;
+
+margin-top:70px;
+
+}
+
+.adv-card{
+
+background:#121212;
+
+padding:45px 35px;
+
+border-radius:22px;
+
+text-align:center;
+
+border:1px solid rgba(255,255,255,.08);
+
+background:
+
+linear-gradient(
+
+180deg,
+
+rgba(255,255,255,.08),
+
+rgba(255,255,255,.03)
+
+);
+
+transition:.35s;
+
+}
+
+.adv-card:hover{
+
+transform:translateY(-10px);
+
+border-color:var(--gold);
+
+box-shadow:0 25px 60px rgba(0,0,0,.4);
+
+}
+
+.adv-icon{
+
+width:85px;
+
+height:85px;
+
+margin:auto;
+
+margin-bottom:30px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:50%;
+
+background:linear-gradient(135deg,var(--gold),#ffd76b);
+
+font-size:40px;
+
+}
+
+.adv-card h3{
+
+margin-bottom:18px;
+
+font-size:25px;
+
+}
+
+.adv-card p{
+
+color:#bdbdbd;
+
+line-height:1.7;
+
+}
+.background-title{
+
+    position:relative;
+
+    height:220px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    background:#050505;
+
+}
+
+.background-title h2{
+
+    position:absolute;
+
+    font-size:170px;
+
+    font-weight:900;
+
+    color:rgba(255,255,255,.03);
+
+    letter-spacing:18px;
+
+    user-select:none;
+
+    white-space:nowrap;
+
+    text-transform:uppercase;
+
+}
+.hero-scroll{
+
+    margin-top:80px;
+
+    font-size:40px;
+
+    color:var(--gold);
+
+    animation:scrollDown 1.8s infinite;
+
+}
+
+@keyframes scrollDown{
+
+0%{
+
+transform:translateY(0);
+
+opacity:1;
+
+}
+
+50%{
+
+transform:translateY(15px);
+
+opacity:.4;
+
+}
+
+100%{
+
+transform:translateY(0);
+
+opacity:1;
+
+}
+
+}
+section{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+.hero::before,
+.advantages::before{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    border-radius:50%;
+    background:rgba(214,161,27,.04);
+    top:-180px;
+    right:-180px;
+    filter:blur(40px);
+}
+.section-title h2{
+
+font-size:56px;
+
+font-weight:900;
+
+margin-bottom:20px;
+
+position:relative;
+
+display:inline-block;
+
+}
+
+.section-title h2::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+bottom:-12px;
+
+width:90px;
+
+height:5px;
+
+background:var(--gold);
+
+border-radius:20px;
+
+}
+.background-title h2{
+    z-index:0;
+    pointer-events:none;
+}
+.hero-content{
+    position:relative;
+    z-index:2;
+}
+.hero-bg-title{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+
+    font-size:140px;
+    font-weight:900;
+    line-height:1;
+
+    color:rgba(255,255,255,.04);
+
+    white-space:nowrap;
+
+    pointer-events:none;
+    user-select:none;
+
+    z-index:0;
+}
+</style>
+
+</head>
+
+<body>
+
+<header id="header">
+
+  <div class="logo">
+    <img src="images/logo.png" alt="Bahodirlar Gym">
+
+    <div class="logo-text">
+        <h2>BAHODIRLAR</h2>
+        <p>FITNESS CLUB</p>
+    </div>
+</div>
+
+    <nav>
+
+        <a href="#home">Bosh sahifa</a>
+
+        <a href="#about">Biz haqimizda</a>
+
+        <a href="#trainers">Trenerlar</a>
+
+        <a href="#programs">Dasturlar</a>
+
+        <a href="#prices">Narxlar</a>
+
+        <a href="#contacts">Bog'lanish uchun</a>
+
+    </nav>
+    <div class="menu-btn" onclick="toggleMenu()">
+    ☰
+</div>
+
+</header>
+
+
+
+<section class="hero" id="home">
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+        <span class="hero-tag">
+            ANDIJONDAGI PROFESSIONAL FITNESS KLUBI
+        </span>
+        <div class="hero-bg-title">BAHODIRLAR</div>
+
+        <h1>
+            BAHODIRLAR
+            <span>GYM</span>
+        </h1>
+
+        <p class="hero-text">
+            Professional murabbiylar, zamonaviy trenajorlar va
+            individual yondashuv orqali maqsadingizga tezroq erishing.
+        </p>
+
+        <div class="hero-info">
+
+            <div>
+                💪 Mushak yig'ish
+            </div>
+
+            <div>
+                🔥 Vazn yo'qotish
+            </div>
+
+            <div>
+                🏆 Armrestling
+            </div>
+
+            <div>
+                👤 Shaxsiy murabbiy
+            </div>
+
+        </div>
+
+        <div class="hero-buttons">
+
+            <a href="#pricing" class="main-btn">
+                A'zo bo'lish
+            </a>
+
+            <a href="#about" class="second-btn">
+                Batafsil
+            </a>
+
+        </div>
+        <div class="hero-scroll">
+
+↓
+
+</div>
+
+    </div>
+
+</section>
+
+
+
+<section class="about" id="about">
+
+<div class="container">
+
+<div class="about-grid">
+
+<div class="about-image">
+
+<img src="images/hero.png" alt="Gym">
+
+</div>
+
+<div class="about-content">
+
+<span class="section-mini">
+BIZ HAQIMIZDA
+</span>
+
+<h2>
+Bahodirlar Gym —
+zamonaviy fitness markazi
+</h2>
+
+<p>
+
+Bizning maqsadimiz —
+har bir insonning sog'lom,
+kuchli va ishonchli bo'lishiga
+yordam berish.
+
+</p>
+
+<div class="about-features">
+
+<div class="feature">
+
+<div class="icon">🏆</div>
+
+<div>
+
+<h4>Professional murabbiylar</h4>
+
+<p>8+ yillik tajriba</p>
+
+</div>
+
+</div>
+
+<div class="feature">
+
+<div class="icon">💪</div>
+
+<div>
+
+<h4>Individual dasturlar</h4>
+
+<p>Har bir mijoz uchun</p>
+
+</div>
+
+</div>
+
+<div class="feature">
+
+<div class="icon">🏋️</div>
+
+<div>
+
+<h4>Zamonaviy uskunalar</h4>
+
+<p>Yuqori sifatli trenajorlar</p>
+
+</div>
+
+</div>
+
+<div class="feature">
+
+<div class="icon">🔥</div>
+
+<div>
+
+<h4>Natijaga yo'naltirilgan</h4>
+
+<p>Maqsadga tezroq erishing</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<section class="trainers" id="trainers">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Bizning murabbiylar</h2>
+
+<p>
+Tajriba, bilim va natijalar.
+</p>
+
+</div>
+
+<div class="trainer-grid">
+
+<div class="trainer-card">
+
+<img src="images/trainer1.png" alt="Trainer">
+
+<div class="trainer-info">
+
+<h3>Alimov Doston</h3>
+
+<span>Fitness • Bodybuilding</span>
+
+<p>
+15+ yillik tajriba, individual yondashuv va maqsad sari ko'mak
+</p>
+
+<a href="#" class="trainer-btn">
+Batafsil
+</a>
+
+</div>
+
+</div>
+
+<div class="trainer-card">
+
+<img src="images/trainer2.png" alt="Trainer">
+
+<div class="trainer-info">
+
+<h3>Komilov Muhammad</h3>
+
+<span>Armwrestling • Fitness</span>
+
+<p>
+
+Armwrestling bo'yicha professional tayyorgarlik 
+
+</p>
+
+<a href="#" class="trainer-btn">
+
+Batafsil
+
+</a>
+
+</div>
+
+</div>
+
+<div class="trainer-card">
+
+<img src="images/trainer3.png" alt="Trainer">
+
+<div class="trainer-info">
+
+<h3>Andijonbayev Muhammadamin</h3>
+
+<span>Fitness • Boxs</span>
+
+<p>
+
+Fitness ozuqalar bo'yicha professional maslahatlar, box mashg'ulotlari
+
+</p>
+
+<a href="#" class="trainer-btn">
+
+Batafsil
+
+</a>
+
+</div>
+tekst
+</div>
+
+</div>
+tekst
+</div>
+
+</section>
+
+<section class="advantages">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Nega aynan Bahodirlar Gym?</h2>
+
+<p>
+Biz mijozlarimizga shunchaki sport zal emas,
+balki natija beradigan muhit yaratamiz.
+</p>
+
+</div>
+
+<div class="adv-grid">
+
+<div class="adv-card">
+
+<div class="adv-icon">
+🏆
+</div>
+
+<h3>8+ yil tajriba</h3>
+
+<p>
+
+Professional murabbiylar va ko'p yillik tajriba.
+
+</p>
+
+</div>
+
+<div class="adv-card">
+
+<div class="adv-icon">
+💪
+</div>
+
+<h3>Individual yondashuv</h3>
+
+<p>
+
+Har bir mijoz uchun alohida mashg'ulot rejasi.
+
+</p>
+
+</div>
+
+<div class="adv-card">
+
+<div class="adv-icon">
+🏋️
+</div>
+
+<h3>Zamonaviy uskunalar</h3>
+
+<p>
+
+Sifatli trenajorlar va qulay muhit.
+
+</p>
+
+</div>
+
+<div class="adv-card">
+
+<div class="adv-icon">
+🔥
+</div>
+
+<h3>Tezroq natija</h3>
+
+<p>
+
+To'g'ri mashg'ulot va nazorat orqali.
+
+</p>
+
+</div>
+
+<div class="adv-card">
+
+<div class="adv-icon">
+❤️
+</div>
+
+<h3>Sog'lom hayot</h3>
+
+<p>
+
+Kuchli tana va yaxshi kayfiyat.
+
+</p>
+
+</div>
+
+<div class="adv-card">
+
+<div class="adv-icon">
+⭐
+</div>
+
+<h3>Yuqori ishonch</h3>
+
+<p>
+
+Yuzlab mamnun mijozlar.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="programs" id="programs">
+
+<div class="container">
+
+<h2 class="title">
+
+Dasturlar
+
+</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<div class="card-image"></div>
+
+<h3>
+
+Vazin yig'ish
+
+</h3>
+
+<p>
+
+Mushak massasini oshirish dasturi
+
+Mushak massasini oshirish dasturi mushak hajmi, kuch va umumiy jismoniy ko‘rinishni yaxshilashni istaganlar uchun mo‘ljallangan. Dastur ilmiy asoslangan mashg‘ulotlar, to‘g‘ri ovqatlanish va sifatli tiklanish tamoyillariga asoslanadi.
+
+Dasturga quyidagilar kiradi:
+
+💪 Haftasiga 5 kunlik mashg‘ulot rejasi.
+📈 Mushaklarni bosqichma-bosqich rivojlantirish.
+🏋️ Barcha mushak guruhlari uchun samarali mashqlar.
+🍗 Ovqatlanish va kaloriya bo‘yicha tavsiyalar.
+😴 Tiklanish va uyqu bo‘yicha tavsiyalar.
+
+Kimlar uchun?
+
+Yangi boshlovchilar.
+Mushak massasini oshirishni istagan sportchilar.
+Vazn yig‘ishda qiynalayotganlar.
+Kuch va jismoniy ko‘rinishini yaxshilashni istaganlar.
+
+Natijada siz:
+
+Mushak massasini oshirasiz.
+Kuch ko‘rsatkichlaringizni yaxshilaysiz.
+Chiroyli va proporsional tana tuzilishiga erishasiz.
+To‘g‘ri mashq qilish odatini shakllantirasiz.
+
+Eslatma: Eng yaxshi natijaga erishish uchun mashg‘ulotlarni muntazam bajarish, to‘g‘ri ovqatlanish va yetarlicha dam olish muhimdir.
+
+💥 Maqsadimiz — sizga kuchli, sog‘lom va estetik tana qurishda yordam berish!
+
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="card-image"></div>
+
+<h3>
+
+Vazin yo'qotish
+
+</h3>
+
+<p>
+
+Vazn yo‘qotish dasturi
+
+Vazn yo‘qotish dasturi ortiqcha vazndan xalos bo‘lish, tana yog‘ini kamaytirish va sog‘lom turmush tarzini shakllantirishni istaganlar uchun mo‘ljallangan. Dastur samarali mashg‘ulotlar, muvozanatli ovqatlanish va muntazam jismoniy faollikka asoslanadi.
+
+Dasturga quyidagilar kiradi:
+
+🔥 Yog‘ yoqishga qaratilgan mashg‘ulotlar.
+🏃 Kardio va kuch mashqlarining samarali uyg‘unligi.
+🥗 To‘g‘ri ovqatlanish bo‘yicha tavsiyalar.
+📊 Natijalarni kuzatish va yuklamani bosqichma-bosqich oshirish.
+💧 Suv iste'moli hamda tiklanish bo‘yicha tavsiyalar.
+
+Kimlar uchun?
+
+Ortiqcha vazndan xalos bo‘lishni istaganlar.
+Tana yog‘i foizini kamaytirishni maqsad qilganlar.
+Sog‘lom va faol hayot tarzini boshlamoqchi bo‘lganlar.
+Jismoniy chidamliligini oshirishni istaganlar.
+
+Natijada siz:
+
+Tana vazningizni kamaytirasiz.
+Tana yog‘i miqdorini kamaytirasiz.
+Chidamlilik va energiyangizni oshirasiz.
+Chiroyli va sog‘lom qomatga erishasiz.
+Sog‘lom odatlarni shakllantirasiz.
+
+Eslatma:Eng yaxshi natijaga erishish uchun mashg‘ulotlarni muntazam bajarish, to‘g‘ri ovqatlanish va yetarli dam olish muhimdir.
+
+🔥 Maqsadimiz — sizga sog‘lom, baquvvat va o‘zingizga ishonchli hayot sari qadam tashlashda yordam berish!**
+
+
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="card-image"></div>
+
+<h3>
+
+Funksional mashg'ulotlar
+
+</h3>
+
+<p>
+
+Funksional mashg'ulotlar dasturi
+
+Funksional mashg'ulotlar dasturi kundalik hayotdagi harakatlarni yengillashtirish, kuch, chidamlilik, muvozanat va harakatchanlikni rivojlantirish uchun mo'ljallangan. Mashg'ulotlar butun tanani birgalikda ishlashga o'rgatadi va umumiy jismoniy tayyorgarlikni oshiradi.
+
+Dasturga quyidagilar kiradi:
+- Butun tana uchun funksional mashqlar.
+- Kuch, tezkorlik va chidamlilikni rivojlantirish.
+- Muvozanat va koordinatsiyani yaxshilash.
+- Bo'g'imlar harakatchanligi va mushaklarning moslashuvchanligini oshirish.
+- Bosqichma-bosqich yuklamani oshirish.
+
+Kimlar uchun?
+- Kundalik jismoniy holatini yaxshilashni istaganlar.
+- Faol va sog'lom turmush tarzini olib borishni xohlovchilar.
+- Sport natijalarini oshirishni maqsad qilganlar.
+- Har qanday tayyorgarlik darajasidagi insonlar.
+
+Natijada siz:
+- Kuch va chidamlilikni oshirasiz.
+- Muvozanat va koordinatsiyani yaxshilaysiz.
+- Harakat erkinligi va moslashuvchanlikni rivojlantirasiz.
+- Kundalik faoliyatni osonroq bajara olasiz.
+- Sog'lom va baquvvat tanaga ega bo'lasiz.
+
+Eslatma: Mashg'ulotlarni muntazam bajarish va to'g'ri tiklanish eng yaxshi natijaga erishishning muhim omillaridir.
+
+Maqsadimiz — sizni kuchliroq, chaqqonroq va har qanday jismoniy vazifaga tayyor qilish!
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="prices" id="prices">
+
+<div class="container">
+
+<h2 class="title">
+
+Narxlar
+
+</h2>
+
+<div class="price-grid">
+
+<div class="price">
+
+<h3>
+
+Standart(kun ora)
+
+</h3>
+
+<div class="price-number">
+
+400,000 so'm
+
+</div>
+
+<ul>
+
+<li>Haftada 4 kunlik trenirovka</li>
+
+<li>Trener maslaxtlari</li>
+
+<li>Barmanning xizmati</li>
+
+<li></li>
+
+</ul>
+
+<button>
+
+Подробнее
+
+</button>
+
+</div>
+
+<div class="price">
+
+<h3>
+
+Premium (har kuni)
+
+</h3>
+
+<div class="price-number">
+
+500,000 so'm
+
+</div>
+
+<ul>
+
+<li>Har kunlik trenirovka</li>
+
+<li>Trenerning maslaxatlari</li>
+
+<li>Barmanning xizmati</li>
+
+<li></li>
+
+</ul>
+
+<button>
+
+Подробнее
+
+</button>
+
+</div>
+
+<div class="price">
+
+<h3>
+
+VIP
+
+</h3>
+
+<div class="price-number">
+
+1,000,000 so'm
+
+</div>
+
+<ul>
+
+<li>Описание</li>
+
+<li>Описание</li>
+
+<li>Описание</li>
+
+<li>Описание</li>
+
+</ul>
+
+<button>
+
+Подробнее
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section class="contacts" id="contacts">
+
+<div class="container">
+
+<h2 class="title">
+
+КОНТАКТЫ
+
+</h2>
+
+<div class="contact-box">
+
+<div class="form">
+
+<input type="text" placeholder="Ismingiz">
+
+<input type="email" placeholder="Email">
+
+<input type="tel" placeholder="Telefon raqamingiz">
+
+<textarea placeholder="Sizning habaringiz"></textarea>
+
+<button>
+
+Jo'natish
+
+</button>
+
+</div>
+
+<div class="map">
+    <iframe
+        src="https://www.google.com/maps?q=40.761737,72.354941&z=17&output=embed"
+        width="100%"
+        height="500"
+        style="border:0;border-radius:20px;"
+        loading="lazy"
+        allowfullscreen>
+    </iframe>
+</div>
+
+<div style="text-align:center; margin-top:25px;">
+    <a href="https://www.google.com/maps?q=40.761737,72.354941"
+       target="_blank"
+       class="main-btn">
+        📍 Google Maps orqali ochish
+    </a>
+</div>
+
+            <div class="about-text">
+              <p>BAHODIRLAR GYM 🏋️</p>
+<p>O'zgarish bugundan boshlanadi!</p>
+💪 Massa yig'ish | Ozish | Funksional mashg'ulotlar
+<p>🔥 Professional yondashuv</p>
+📩 Ro'yxatdan o'tish uchun telefon raqamlar: <p>+998 88 999 99 71 ; +998 97 117 50 55</p>
+
+
+            </div>
+</section>
+
+<section class="stats">
+
+<div class="container">
+
+<div class="stats-grid">
+
+<div class="stat">
+<h2>700+</h2>
+<p>Mijozlar</p>
+</div>
+
+<div class="stat">
+<h2>8+</h2>
+<p>Yillik tajriba</p>
+</div>
+
+<div class="stat">
+<h2>3</h2>
+<p>Professional trener</p>
+</div>
+
+<div class="stat">
+<h2>100%</h2>
+<p>Individual yondashuv</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 BAHODIRLAR FITNESS
+
+</footer>
+
+
+
+
+<script>
+
+const header=document.getElementById("header");
+
+window.addEventListener("scroll",()=>{
+
+if(window.scrollY>80){
+
+header.classList.add("scrolled");
+
+}else{
+
+header.classList.remove("scrolled");
+
+}
+
+});
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+
+anchor.addEventListener("click",function(e){
+
+e.preventDefault();
+
+document.querySelector(this.getAttribute("href")).scrollIntoView({
+
+behavior:"smooth"
+
+});
+
+});
+
+});
+function toggleMenu(){
+
+document.querySelector("nav").classList.toggle("active");
+
+}
+document.querySelectorAll("nav a").forEach(link=>{
+
+link.addEventListener("click",()=>{
+
+document.querySelector("nav").classList.remove("active");
+
+});
+
+});
+
+</script>
+
+</body>
+
+</html>
